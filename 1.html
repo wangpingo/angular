@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Augular</title>
+    <link rel="stylesheet" href="http://cdn.amazeui.org/amazeui/2.7.2/css/amazeui.min.css">
+</head>
+<body style="padding: 50px" ng-app="app">
+<div style="width: 300px;margin: 0 auto" ng-controller="formLogin">
+    <div class="am-alert" data-am-alert>
+        <button type="button" class="am-close">&times;</button>
+        <p>{{errorMsg}}</p>
+    </div>
+    <h1>登录表单</h1>
+<div class="am-input-group">
+    <span class="am-input-group-label"><i class="am-icon-user am-icon-fw"></i></span>
+    <input type="text" class="am-form-field" placeholder="Username" ng-model="user.uid">
+</div>
+
+<div class="am-input-group">
+    <span class="am-input-group-label"><i class="am-icon-lock am-icon-fw"></i></span>
+    <input type="text" class="am-form-field" placeholder="Password" ng-model="user.pwd">
+</div>
+    <div class="am-g" style="margin-top: 15px">
+        <div class="am-u-sm-6">
+            <button type="button" class="am-btn am-btn-default">取消</button>
+        </div>
+        <div class="am-u-sm-6">
+            <button type="button" class="am-btn am-btn-primary" ng-click="login()">登录</button>
+
+        </div>
+
+    </div>
+</div>
+</body>
+<script src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js"></script>
+<script>
+    angular.module('app',[])
+        .controller('formLogin',function ($scope) {
+            $scope.user={uid:'',pwd:''};
+            $scope.errorMsg='';
+            $scope.login=function () {
+                console.log($scope.user.uid);
+                console.log($scope.user.pwd);
+                if ($scope.user.uid=='admin' &&$scope.user.pwd=='admin'){
+                    $scope.errorMsg='登陆成功';
+                }else {
+                    $scope.errorMsg='登陆失败';
+
+                }
+            }
+        })
+</script>
+</html>
