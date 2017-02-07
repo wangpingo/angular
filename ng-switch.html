@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="http://cdn.amazeui.org/amazeui/2.7.2/css/amazeui.min.css">
+</head>
+<body style="padding: 50px" ng-app="">
+<div class="am-form-group">
+    <label for="doc-select-1">下拉多选框</label>
+    <select id="doc-select-1" ng-model="pic">
+        <option value="1">显示第一张图片</option>
+        <option value="2">显示第二张图片</option>
+        <option value="3">显示第三张图片</option>
+    </select>
+    <span class="am-form-caret"></span>
+</div>
+<ul class="am-avg-sm-4 am-thumbnails" ng-switch="pic">
+    <li ng-switch-when="1"><img class="am-thumbnail" src="http://s.amazeui.org/media/i/demos/bing-1.jpg" /></li>
+    <li ng-switch-when="2"><img class="am-thumbnail" src="http://s.amazeui.org/media/i/demos/bing-2.jpg" /></li>
+    <li ng-switch-when="3"><img class="am-thumbnail" src="http://s.amazeui.org/media/i/demos/bing-3.jpg" /></li>
+    <li ng-switch-default><img class="am-thumbnail" src="http://s.amazeui.org/media/i/demos/bing-4.jpg" /></li>
+</ul>
+</body>
+<script src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js"></script>
+</html>

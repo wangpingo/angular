@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="http://cdn.amazeui.org/amazeui/2.7.2/css/amazeui.min.css">
+</head>
+<body style="padding: 50px" ng-app="app">
+    <div ng-controller="baba">
+        <div ng-controller="erzi">
+            <p>{{text_one}}</p>
+            <p>{{text_two}}</p>
+        </div>
+    </div>
+</body>
+<script src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js"></script>
+<script>
+    var app=angular.module('app',[]);
+    app.controller('baba',function ($scope) {
+        $scope.text_one='Hello';
+        $scope.text_two='World';
+
+    })
+    app.controller('erzi',function ($scope) {
+
+    })
+</script>
+</html>
